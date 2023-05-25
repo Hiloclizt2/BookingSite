@@ -85,67 +85,101 @@ var swiper = new Swiper(".brand-slider", {
         },
        },
 });
-const bookingForm = document.getElementById("booking-form");
+// Select the form element
+const bookingForm = document.querySelector('#booking-form');
+// Select the tbody element of the booking table
+const bookingTableBody = document.querySelector('#booking-table tbody');
 
-bookingForm.addEventListener("submit", function(event) {
-  event.preventDefault();
+// Retrieve existing bookings from localStorage or initialize as empty array
+let bookings = JSON.parse(localStorage.getItem('bookings')) || [];
 
-  // Get the input field values
-  const placeNameInput = document.getElementById("place-name");
-  const guestsInput = document.getElementById("guests");
-  const arrivalsInput = document.getElementById("arrivals");
-  const leavingInput = document.getElementById("leaving");
+// Render all bookings in the table
+bookings.forEach((booking, index) => {
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${booking.placeName}</td>
+    <td>${booking.numOfGuests}</td>
+    <td>${booking.arrivalDate}</td>
+    <td>${booking.leavingDate}</td>
+    <td><button class="delete-btn" data-index="${index}">Delete</button></td>
+  `;
+  bookingTableBody.appendChild(row);
+});
 
-  // Check if the leaving date is earlier than the arrival date
-  if (new Date(leavingInput.value) < new Date(arrivalsInput.value)) {
-    alert("Leaving date cannot be earlier than arrival date!");
-    return;
+// Add event listener for form submission
+bookingForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // prevent form from reloading the page
+
+  // Get input values
+  const placeName = document.querySelector('#place-name-input').value;
+  const numOfGuests = document.querySelector('#num-of-guests-input').value;
+  const arrivalDate = document.querySelector('#arrival-date-input').value;
+  const leavingDate = document.querySelector('#leaving-date-input').value;
+
+  // Check if leaving date is before or equal to arrival date
+  if (new Date(leavingDate) <= new Date(arrivalDate)) {
+    alert('The leaving date must be after the arrival date.');
+    return; // exit the function and prevent further processing
   }
 
   // Create a new booking object
   const booking = {
-    placeName: placeNameInput.value,
-    guests: guestsInput.value,
-    arrivals: arrivalsInput.value,
-    leaving: leavingInput.value
+    placeName,
+    numOfGuests,
+    arrivalDate,
+    leavingDate
   };
 
-  // Save the booking object to local storage
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+  // Add the new booking to the array
   bookings.push(booking);
-  localStorage.setItem("bookings", JSON.stringify(bookings));
 
-  // Show confirmation message
-  const confirmationMessage = document.createElement("div");
-  confirmationMessage.innerHTML = `Thank you for booking ${booking.placeName}!`;
-  confirmationMessage.classList.add("confirmation-message");
-  document.body.appendChild(confirmationMessage);
-  setTimeout(function () {
-    confirmationMessage.remove();
-  }, 3000);
+  // Store updated bookings array in localStorage
+  localStorage.setItem('bookings', JSON.stringify(bookings));
 
-  // Reset the form inputs
+  // Optional: display confirmation message to user
+  alert('Booking successful!');
+
+  // Clear the form inputs
   bookingForm.reset();
+
+  // Clear the booking table body
+  bookingTableBody.innerHTML = '';
+
+  // Render all bookings in the table
+  renderBookings();
 });
 
-function checkBooking() {
-  // Get the booked user's information from your database or API
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-  const lastBooking = bookings[bookings.length - 1];
-  
-  // Update the Check My Booking button based on whether a booking exists or not
-  const checkBookingButton = document.getElementById("check-booking-button");
-  if (lastBooking) {
-    checkBookingButton.innerHTML = `My Booking: ${lastBooking.placeName}`;
-    checkBookingButton.href = `#${lastBooking.placeName}`;
-    
-    // Display the booking information to the user in a fixed message format
-    alert(`Your booking details:\nPlace Name: ${lastBooking.placeName}\nNumber of Guests: ${lastBooking.guests}\nArrival Date: ${lastBooking.arrivals}\nLeaving Date: ${lastBooking.leaving}`);
-  } else {
-    checkBookingButton.innerHTML = "No Booking Found";
-    checkBookingButton.href = "#";
-    
-    // Display a fixed message to the user indicating there is no booking found
-    alert("Sorry, we could not find a booking for you.");
-  }
+// Function to delete a booking from the array, local storage, and table
+function deleteBooking(index) {
+  bookings.splice(index, 1); // remove the booking from the array
+  localStorage.setItem('bookings', JSON.stringify(bookings)); // update localStorage
+  renderBookings(); // update the table with the remaining bookings
 }
+
+// Function to render all bookings in the table
+function renderBookings() {
+  bookingTableBody.innerHTML = ''; // clear the table body
+
+  bookings.forEach((booking, index) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${booking.placeName}</td>
+      <td>${booking.numOfGuests}</td>
+      <td>${booking.arrivalDate}</td>
+      <td>${booking.leavingDate}</td>
+      <td><button class="delete-btn" data-index="${index}">Delete</button></td>
+    `;
+    bookingTableBody.appendChild(row);
+  });
+}
+
+// Add event listener for delete buttons
+bookingTableBody.addEventListener('click', (e) => {
+  if (e.target && e.target.matches('.delete-btn')) {
+    const index = e.target.dataset.index;
+    deleteBooking(index);
+  }
+});
+
+// Call renderBookings() on page load to display any existing bookings
+renderBookings();

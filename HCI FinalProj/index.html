@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Booking</title>
+    <title>complete responsive tour and travel agency website design tutorial</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -27,13 +27,12 @@
     <nav class="navbar">
         <a href="#home">home</a>
         <a href="#book">book</a>
-        <a href="#packages">packages</a>
+        <a href="#packages">details</a>
         <a href="#services">services</a>
         <a href="#gallery">gallery</a>
         <a href="#review">review</a>
         <a href="#contact">contact</a>
-        <button id="check-booking-button" class="nav-button" onclick="checkBooking()">Check My Booking</button>
-          </nav>
+    </nav>
 
     <div class="icons">
         <i class="fas fa-search" id="search-btn"></i>
@@ -79,7 +78,7 @@
     </div>
 
     <div class="controls">
-        <span class="vid-btn active" data-src="vid-1.mp4"></span>
+        <span class="vid-btn active" data-src="vid-1.mp"></span>
         <span class="vid-btn" data-src="vid-2.mp4"></span>
         <span class="vid-btn" data-src="vid-3.mp4"></span>
         <span class="vid-btn" data-src="vid-4.mp4"></span>
@@ -97,7 +96,6 @@
 <!-- book section starts  -->
 
 <section class="book" id="book">
-
     <h1 class="heading">
         <span>b</span>
         <span>o</span>
@@ -109,155 +107,66 @@
         <span>w</span>
     </h1>
 
-    <div class="Booking-row">
-
+    <div class="row">
         <div class="image">
-            <img src="book-img.svg" alt="">
+          <img src="book-img.svg" alt="">
         </div>
-
+      
         <form id="booking-form">
-            <div class="inputBox">
-              <h3>where to</h3>
-              <input type="text" id="place-name" placeholder="place name">
-            </div>
-            <div class="inputBox">
-              <h3>how many</h3>
-              <input type="number" id="guests" placeholder="number of guests">
-            </div>
-            <div class="inputBox">
-              <h3>arrivals</h3>
-              <input type="date" id="arrivals">
-            </div>
-            <div class="inputBox">
-              <h3>leaving</h3>
-              <input type="date" id="leaving">
-            </div>
-            <input type="submit" class="btn" value="Book now">
-          </form>
+          <div class="inputBox">
+            <h3>where to</h3>
+            <input type="text" placeholder="place name" id="place-name-input">
+          </div>
+          <div class="inputBox">
+            <h3>how many</h3>
+            <input type="number" placeholder="number of guests" id="num-of-guests-input">
+          </div>
+          <div class="inputBox">
+            <h3>arrivals</h3>
+            <input type="date" id="arrival-date-input">
+          </div>
+          <div class="inputBox">
+            <h3>leaving</h3>
+            <input type="date" id="leaving-date-input">
+          </div>
+          <input type="submit" class="btn" value="book now">
+        </form>
+      </div>
+        
 
 <!-- book section ends -->
 
 <!-- packages section starts  -->
 
 <section class="packages" id="packages">
-
+    
     <h1 class="heading">
-        <span>p</span>
-        <span>a</span>
-        <span>c</span>
-        <span>k</span>
-        <span>a</span>
-        <span>g</span>
+        <span>B</span>
+        <span>-</span>
+        <span>d</span>
         <span>e</span>
+        <span>t</span>
+        <span>a</span>
+        <span>i</span>
+        <span>l</span>
         <span>s</span>
-    </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="1.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> Mumbai </h3>
-                <p>Mumbai is the centre of the Mumbai Metropolitan Region, the sixth most populous metropolitan area in the world with a population of over 23 million.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price"> $90.00 <span>$120.00</span> </div>
-                <a href="#" class="btn">book now</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="2.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> Hawaii </h3>
-                <p>Hawaii is a state in the Western United States located in the Pacific Ocean about 2,000 miles from the U.S. mainland. It is the only state outside North America, the only state that is an archipelago, and the only state in the tropics.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price"> $90.00 <span>$120.00</span> </div>
-                <a href="#" class="btn">book now</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="3.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> Sydney </h3>
-                <p>Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harbourfront Sydney Opera House, with a distinctive sail-like design.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price"> $90.00 <span>$120.00</span> </div>
-                <a href="#" class="btn">book now</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="4.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> Paris </h3>
-                <p>Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price"> $90.00 <span>$120.00</span> </div>
-                <a href="#" class="btn">book now</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="5.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> Tokyo </h3>
-                <p>Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples.The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price"> $90.00 <span>$120.00</span> </div>
-                <a href="#" class="btn">book now</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="6.jpg" alt="">
-            <div class="content">
-                <h3> <i class="fas fa-map-marker-alt"></i> Egypt </h3>
-                <p>Egypt, a country linking northeast Africa with the Middle East, dates to the time of the pharaohs. Millennia-old monuments sit along the fertile Nile River Valley, including Giza's colossal Pyramids and Great Sphinx as well as Luxor's hieroglyph-lined Karnak Temple and Valley of the Kings tombs.</p>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                </div>
-                <div class="price"> $90.00 <span>$120.00</span> </div>
-                <a href="#" class="btn">book now</a>
-            </div>
-        </div>
-
-    </div>
-
+        
+        <div id="booking-section">
+            <h2>Booking Details</h2>
+            <table id="booking-table">
+              <thead>
+                <tr>
+                  <th>Place Name</th>
+                  <th>Number of Guests</th>
+                  <th>Arrival Date</th>
+                  <th>Leaving Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
 </section>
 
 <!-- packages section ends -->
@@ -333,77 +242,70 @@
     <div class="box-container">
 
         <div class="box">
-            <img src="g-1.jpg" alt="">
+            <img src="paris.jpg" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>Paris</h3>
+                <p>Paris, the city of Lights, the fashion capital, the city of Love.</p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-2.jpg" alt="">
+            <img src="enchanted kingdom.jpg" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>Enchanted Kingdom</h3>
+                <p>Enchanted Kingdom, is a theme park in the Philippines. It is located in Santa Rosa, Laguna. It has a land area of 25 hectares. </p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-3.jpg" alt="">
+            <img src="london.jpg" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>London</h3>
+                <p>London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.</p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-4.jpg" alt="">
+            <img src="New york.jpg" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>New York</h3>
+                <p>New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean.</p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-5.jpg" alt="">
+            <img src="italy.webp" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>Italy</h3>
+                <p>Topping off the list of most popular tourist attractions is the Colosseum which is no big surprise for those with it on their bucket list.</p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-6.jpg" alt="">
+            <img src="rio.webp" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>Brazil</h3>
+                <p>Christ the Redeemer, Portuguese Cristo Redentor, colossal statue of Jesus Christ at the summit of Mount Corcovado, Rio de Janeiro, southeastern Brazil. </p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-7.jpg" alt="">
+            <img src="palawan.webp" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>Philippines</h3>
+                <p>Palawan, officially the Province of Palawan, is an archipelagic province of the Philippines that is located in the region of Mimaropa.</p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
         <div class="box">
-            <img src="g-8.jpg" alt="">
+            <img src="kyoto.jpg" alt="">
             <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
+                <h3>Japan</h3>
+                <p>Kyoto, once the capital of Japan, is a city on the island of Honshu. It's famous for its numerous classical Buddhist temples. </p>
                 <a href="#" class="btn">see more</a>
             </div>
         </div>
-        <div class="box">
-            <img src="g-9.jpg" alt="">
-            <div class="content">
-                <h3>amazing places</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur.</p>
-                <a href="#" class="btn">see more</a>
-            </div>
-        </div>
+       
 
     </div>
 
@@ -430,9 +332,10 @@
 
             <div class="swiper-slide">
                 <div class="box">
-                    <img src="pic1.png" alt="">
-                    <h3>john deo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <img src="aaron.jpg" alt="">
+                    <h3>Aaron Badolato</h3>
+                    <p>I had an amazing experience staying at this hotel. From the moment I arrived, the staff was friendly and accommodating. The room was clean and spacious with beautiful views of the city. The location was perfect, just steps away from all the major attractions. The breakfast buffet was also delicious with a wide variety of options to choose from. 
+                        I would highly recommend this hotel to anyone looking for a comfortable and convenient stay in the city.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -444,9 +347,10 @@
             </div>
             <div class="swiper-slide">
                 <div class="box">
-                    <img src="pic2.png" alt="">
-                    <h3>john deo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <img src="147.jpg" alt="">
+                    <h3>Jasmin Nicole</h3>
+                    <p> I had an amazing experience at this hotel! The staff was incredibly friendly and accommodating, the room was clean and comfortable, and the location was perfect for exploring the city. 
+                        I would highly recommend staying here."</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -458,9 +362,9 @@
             </div>
             <div class="swiper-slide">
                 <div class="box">
-                    <img src="pic3.png" alt="">
-                    <h3>john deo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <img src="john.JPG" alt="">
+                    <h3>John Denver</h3>
+                    <p> This tour was absolutely fantastic! Our guide was knowledgeable and engaging, and we got to see some truly breathtaking sights. I would definitely book this tour again if I had the chance.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -472,9 +376,10 @@
             </div>
             <div class="swiper-slide">
                 <div class="box">
-                    <img src="pic4.png" alt="">
-                    <h3>john deo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <img src="clint.jpg" alt="">
+                    <h3>Clint Joseph</h3>
+                    <p> The airline staff were efficient and friendly, but the plane itself was cramped and uncomfortable. The in-flight entertainment was also lacking. 
+                        Overall, I was disappointed with my experience and would consider a different airline for future flights.</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -556,7 +461,8 @@
 
         <div class="box">
             <h3>about us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est accusantium voluptas enim nemo facilis sit debitis.</p>
+            <p> Our Website typically aggregate information from various travel suppliers and present it to users in an organized and user-friendly format,
+                 making it easier for travelers to compare prices, schedules, and other details.</p>
         </div>
         <div class="box">
             <h3>branch locations</h3>
@@ -577,7 +483,7 @@
         </div>
         <div class="box">
             <h3>follow us</h3>
-            <a href="https://www.facebook.com/profile.php?id=100078808444488">facebook</a>
+            <a href="#">facebook</a>
             <a href="#">instagram</a>
             <a href="#">twitter</a>
             <a href="#">linkedin</a>
@@ -585,15 +491,13 @@
 
     </div>
 
-    <h1 class="credit"> created by <span> Boss Clint </span> | all rights reserved! </h1>
+    <h1 class="credit"> created by <span> Boss Clizt </span> | all rights reserved! </h1>
 
 </section>
 
-
-
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-
+<!-- custom js file link  -->
 <script src="Final.js"></script>
 
 </body>
